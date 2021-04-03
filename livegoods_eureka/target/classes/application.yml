@@ -1,13 +1,11 @@
+server:
+  port: 8761
 spring:
   application:
     name: livegoods-eureka
-server:
-  port: 8761
-
-
 eureka:
   client:
     fetch-registry: false
     register-with-eureka: false
   instance:
-    prefer-ip-address: true # 注册服务时，优先选择ip，不是主机名
+    prefer-ip-address: true # 在注册服务的时候，优先选择IP，不是主机名。
