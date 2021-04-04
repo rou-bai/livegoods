@@ -22,6 +22,12 @@ spring:
           predicates:
             - Path=/recommendation
             - Query=city #请求参数必须含city参数
+        # 定义hotproduct的路由
+        - id: hotproduct
+          uri: http://127.0.0.1:9002
+          predicates:
+            - Path=/hotProduct
+            - Query=city #请求参数必须含city参数
 eureka:
   instance:
     prefer-ip-address: true

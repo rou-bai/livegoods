@@ -55,7 +55,7 @@
                     <!-- FROM -->
                     <baseImage>openjdk:8</baseImage>
                     <imageName>livegoods/recommendation:1.0</imageName>
-                    <dockerHost>http://192.168.1.4:2376</dockerHost>
+                    <dockerHost>http://127.0.0.1:2376</dockerHost>
                     <!-- ADD -->
                     <resources>
                         <resource><!-- 复制到容器中的文件，命名和本地文件命名一致。 -->

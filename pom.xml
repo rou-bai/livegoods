@@ -16,6 +16,7 @@
         <module>livegoods_getway</module>
         <module>livegoods_recommendation</module>
         <module>livegoods_pojo_item</module>
+        <module>livegoods_hot_product</module>
     </modules>
 
     <properties>

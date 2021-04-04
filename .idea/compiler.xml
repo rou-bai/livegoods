@@ -12,6 +12,7 @@
         <module name="livegoods_recommendation" />
         <module name="livegoods_pojo_item" />
         <module name="livegoods_dao_mongodb" />
+        <module name="livegoods_hot_product" />
         <module name="livegoods_gateway" />
         <module name="livegoods_commons" />
         <module name="livegoods_eureka" />

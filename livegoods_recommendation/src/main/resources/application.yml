@@ -8,8 +8,8 @@ spring:
 eureka:
   client:
     service-url:
-#      defaultZone: http://172.17.0.4:8761/eureka/
-      defaultZone: http://127.0.0.1:8761/eureka/
+      defaultZone: http://172.17.0.4:8761/eureka/
+#      defaultZone: http://127.0.0.1:8761/eureka/
       register-with-eureka: true
   instance:
     prefer-ip-address: true

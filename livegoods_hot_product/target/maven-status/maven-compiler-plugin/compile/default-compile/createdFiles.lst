@@ -1,0 +1,6 @@
+com/livegoods/dao/impl/HotProductDaoImpl.class
+com/livegoods/service/impl/HotProductServiceImpl.class
+com/livegoods/dao/HotProductDao.class
+com/livegoods/LivegoodsHotProductApplication.class
+com/livegoods/controller/HotProductController.class
+com/livegoods/service/HotProductService.class

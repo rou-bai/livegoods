@@ -1,0 +1,6 @@
+com/livegoods/recommendation/dao/RecommendatioinDao.class
+com/livegoods/recommendation/LivegoodsRecommendationApplication.class
+com/livegoods/recommendation/dao/impl/RecommendationDaoImpl.class
+com/livegoods/recommendation/controller/RecommendationController.class
+com/livegoods/recommendation/service/impl/RecommendationServiceImpl.class
+com/livegoods/recommendation/service/RecommendationService.class
