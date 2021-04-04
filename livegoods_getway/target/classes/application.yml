@@ -1,0 +1,25 @@
+server:
+  port: 4006
+spring:
+  application:
+    name: livegoods-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: false
+          lower-case-service-id: true
+      routes:
+        # 定义banner的路由
+        - id: banner
+#          uri: lb://livegoods-banner
+          uri: http://127.0.0.1:9000
+          predicates:
+            - Path=/banner
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka/
+      register-with-eureka: true

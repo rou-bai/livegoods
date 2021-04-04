@@ -10,6 +10,10 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>livegoods_eureka</module>
+        <module>livegoods_banner</module>
+        <module>livegoods_dao_mongodb</module>
+        <module>livegoods_commons</module>
+        <module>livegoods_getway</module>
     </modules>
 
     <properties>
