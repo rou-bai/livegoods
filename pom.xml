@@ -14,6 +14,8 @@
         <module>livegoods_dao_mongodb</module>
         <module>livegoods_commons</module>
         <module>livegoods_getway</module>
+        <module>livegoods_recommendation</module>
+        <module>livegoods_pojo_item</module>
     </modules>
 
     <properties>

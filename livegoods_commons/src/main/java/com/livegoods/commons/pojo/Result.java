@@ -16,4 +16,10 @@ import java.util.List;
 public class Result<T> implements Serializable {
     private Integer status;
     private List<T> results;
+    public List<T> getData(){
+        return results;
+    }
+    public void setDate(List<T> data){
+        this.results = data;
+    }
 }

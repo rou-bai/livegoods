@@ -16,6 +16,12 @@ spring:
           uri: http://127.0.0.1:9000
           predicates:
             - Path=/banner
+        # 定义commendation的路由
+        - id: recommendation
+          uri: http://127.0.0.1:9001
+          predicates:
+            - Path=/recommendation
+            - Query=city #请求参数必须含city参数
 eureka:
   instance:
     prefer-ip-address: true
