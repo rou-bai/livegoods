@@ -16,9 +16,17 @@ import java.util.List;
 public class Result<T> implements Serializable {
     private Integer status;
     private List<T> results;
+    private boolean hasMore;
+
+    public Result(Integer status, List<T> results){
+        this.status = status;
+        this.results = results;
+    }
+
     public List<T> getData(){
         return results;
     }
+
     public void setDate(List<T> data){
         this.results = data;
     }

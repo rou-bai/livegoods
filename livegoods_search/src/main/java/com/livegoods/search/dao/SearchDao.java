@@ -20,5 +20,5 @@ public interface SearchDao {
      *      "contents":[当前页要显示的房屋集合]
      *  }
      */
-//    Map<String, Object> search(String city, String content, int page, int rows);
+    Map<String, Object> search(String city, String content, int page, int rows);
 }

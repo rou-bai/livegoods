@@ -8,5 +8,5 @@ public interface SearchService {
     boolean init();
 
     // 搜索房屋。每页搜索5条数据
-//    Result<House4ES> search(String city, String content, int page);
+    Result<House4ES> search(String city, String content, int page);
 }

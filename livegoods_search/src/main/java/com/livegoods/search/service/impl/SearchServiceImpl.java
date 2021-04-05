@@ -1,5 +1,6 @@
 package com.livegoods.search.service.impl;
 
+import com.livegoods.commons.pojo.Result;
 import com.livegoods.pojo.Houses;
 import com.livegoods.search.dao.SearchDao;
 import com.livegoods.search.feign.LivegoodsDetailsService;
@@ -25,6 +26,24 @@ public class SearchServiceImpl implements SearchService {
     private String nginxServer;
     @Value("${livegoods.img.middle}")
     private String imgMiddle;
+
+    /*
+    房屋查询
+     */
+    public Result<House4ES> search(String city, String content, int page){
+        Map<String, Object> resultMap = searchDao.search(city, content, page, defaultRows);
+        int pages = (int)resultMap.get("pages");
+        List<House4ES> result = (List)resultMap.get("contents");
+
+        Result<House4ES> res = new Result<>();
+        for(House4ES house: result){
+            house.setImg(nginxServer + imgMiddle + house.getImg());
+        }
+        res.setResults(result);
+        res.setHasMore((pages - page) > 1);
+        res.setStatus(200);
+        return res;
+    }
 
     /*
     初始化mongo房屋数据到es

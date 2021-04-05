@@ -19,10 +19,10 @@ public class SearchController {
      * @param page 页码，从0开始
      * @return
      */
-//    @GetMapping("/search")
-//    public Result<House4ES> search(String city, String content, int page){
-//        return searchService.search(city, content, page);
-//    }
+    @GetMapping("/search")
+    public Result<House4ES> search(String city, String content, int page){
+        return searchService.search(city, content, page);
+    }
 
     /**
      * 初始化ES数据。从MongoDB中查询所有的房屋数据，并初始化到ES中。
