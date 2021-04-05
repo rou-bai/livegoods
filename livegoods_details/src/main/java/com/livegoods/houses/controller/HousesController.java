@@ -19,4 +19,12 @@ public class HousesController {
     public List<Houses> getAll(){
         return housesService.getAll();
     }
+
+    /*
+    获取商品详情
+     */
+    @GetMapping("/details")
+    public Houses showHouseDetailsById(String id){
+        return housesService.getHouseById(id);
+    }
 }

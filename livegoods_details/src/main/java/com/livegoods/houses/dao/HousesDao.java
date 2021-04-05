@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface HousesDao {
     List<Houses> findAll();
+    Houses findById(String id);
 }

@@ -36,6 +36,12 @@ spring:
             - Query=city #请求参数必须含city参数
             - Query=content
             - Query=page #只能处理get请求参数
+        # 定义details的路由
+        - id: details
+          uri: http://127.0.0.1:9004
+          predicates:
+            - Path=/details
+            - Query=id
 eureka:
   instance:
     prefer-ip-address: true

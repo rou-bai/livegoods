@@ -17,4 +17,9 @@ public class HousesDaoImpl implements HousesDao {
     public List<Houses> findAll(){
         return mongoTemplate.findAll(Houses.class);
     }
+
+    @Override
+    public Houses findById(String id){
+        return mongoTemplate.findById(id, Houses.class);
+    }
 }
