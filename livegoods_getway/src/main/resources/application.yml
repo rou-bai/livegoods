@@ -28,6 +28,14 @@ spring:
           predicates:
             - Path=/hotProduct
             - Query=city #请求参数必须含city参数
+        # 定义search的路由
+        - id: search
+          uri: http://127.0.0.1:9003
+          predicates:
+            - Path=/search
+            - Query=city #请求参数必须含city参数
+            - Query=content
+            - Query=page #只能处理get请求参数
 eureka:
   instance:
     prefer-ip-address: true
