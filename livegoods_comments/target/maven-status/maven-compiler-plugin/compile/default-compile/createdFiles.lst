@@ -1,0 +1,6 @@
+com/livegoods/comments/dao/impl/CommentDaoImpl.class
+com/livegoods/comments/dao/CommentsDao.class
+com/livegoods/comments/LivegoodsCommentsApplication.class
+com/livegoods/comments/controller/CommentsController.class
+com/livegoods/comments/service/impl/CommentsServiceImpl.class
+com/livegoods/comments/service/CommentsService.class

@@ -17,6 +17,7 @@ public class Result<T> implements Serializable {
     private Integer status;
     private List<T> results;
     private boolean hasMore;
+    private long time;
 
     public Result(Integer status, List<T> results){
         this.status = status;

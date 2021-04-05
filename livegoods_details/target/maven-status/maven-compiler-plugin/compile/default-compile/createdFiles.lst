@@ -1,0 +1,6 @@
+com/livegoods/houses/dao/HousesDao.class
+com/livegoods/houses/service/impl/HousesServiceImpl.class
+com/livegoods/houses/dao/impl/HousesDaoImpl.class
+com/livegoods/houses/controller/HousesController.class
+com/livegoods/houses/service/HousesService.class
+com/livegoods/houses/LivegoodsHousesApplication.class

@@ -23,6 +23,7 @@
         <module>livegoods_details</module>
         <module>livegoods_comments</module>
         <module>livegoods_pojo_comment</module>
+        <module>livegoods_by_time</module>
     </modules>
 
     <properties>

@@ -10,14 +10,13 @@ spring:
     port: 6379
     database: 0
 eureka:
+  instance:
+    prefer-ip-address: true # 使用ip注册，不使用主机名
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
   client:
     service-url:
-      defaultZone: http://192.168.1.4:8761/eureka/
-#      defaultZone: http://127.0.0.1:8761/eureka/
+      defaultZone: http://172.17.0.8:8761/eureka/  # 注册中心
       register-with-eureka: true
-  instance:
-    prefer-ip-address: true
-    instance-id: ${spring.cloud.client.ip-address}:${server.port}
 livegoods:
   details:
     imgMiddle: 'group1/M00/00/00/'

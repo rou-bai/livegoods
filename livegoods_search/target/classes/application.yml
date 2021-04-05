@@ -15,9 +15,9 @@ eureka:
     instance-id: ${spring.cloud.client.ip-address}:${server.port}
   client:
     service-url:
-      defaultZone: http://192.168.1.4:8761/eureka/
+#      defaultZone: http://192.168.1.4:8761/eureka/
       register-with-eureka: true
-#      defaultZone: http://172.17.0.4:8761/eureka/  # 注册中心
+      defaultZone: http://172.17.0.8:8761/eureka/  # 注册中心,docker内eureka分配到ip
 
 livegoods:
   search:

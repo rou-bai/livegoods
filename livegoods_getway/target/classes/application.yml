@@ -49,6 +49,12 @@ spring:
             - Path=/comment
             - Query=id
             - Query=page
+        # 定义details的路由
+        - id: buytime
+          uri: http://127.0.0.1:9006
+          predicates:
+            - Path=/buytime
+            - Query=id
 eureka:
   instance:
     prefer-ip-address: true

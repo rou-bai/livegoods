@@ -1,0 +1,10 @@
+com/livegoods/search/pojo/House4ES.class
+com/livegoods/search/configuration/SearchSecurityConfiguration.class
+com/livegoods/search/feign/LivegoodsDetailsService.class
+com/livegoods/search/dao/impl/SearchDaoImpl$1.class
+com/livegoods/search/LivegoodsSearchApplication.class
+com/livegoods/search/controller/SearchController.class
+com/livegoods/search/dao/SearchDao.class
+com/livegoods/search/service/impl/SearchServiceImpl.class
+com/livegoods/search/dao/impl/SearchDaoImpl.class
+com/livegoods/search/service/SearchService.class

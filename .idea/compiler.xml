@@ -19,6 +19,7 @@
         <module name="livegoods_gateway" />
         <module name="livegoods_eureka" />
         <module name="livegoods_details" />
+        <module name="livegoods_by_time" />
         <module name="livegoods_recommendation" />
         <module name="livegoods_data_elasticsearch" />
         <module name="livegoods_commons" />

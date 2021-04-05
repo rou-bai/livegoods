@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.Map;
 
 @Data
@@ -26,5 +27,6 @@ public class Houses implements Serializable {
      * orientation: "朝向  朝南"
      */
     private Map<String, String> info;
+    private Date buytime;
 
 }

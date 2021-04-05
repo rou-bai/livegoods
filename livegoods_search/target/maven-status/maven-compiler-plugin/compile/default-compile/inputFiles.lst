@@ -1,0 +1,9 @@
+/Users/tangyao/Downloads/livegoods/livegoods_search/src/main/java/com/livegoods/search/service/impl/SearchServiceImpl.java
+/Users/tangyao/Downloads/livegoods/livegoods_search/src/main/java/com/livegoods/search/dao/impl/SearchDaoImpl.java
+/Users/tangyao/Downloads/livegoods/livegoods_search/src/main/java/com/livegoods/search/feign/LivegoodsDetailsService.java
+/Users/tangyao/Downloads/livegoods/livegoods_search/src/main/java/com/livegoods/search/configuration/SearchSecurityConfiguration.java
+/Users/tangyao/Downloads/livegoods/livegoods_search/src/main/java/com/livegoods/search/LivegoodsSearchApplication.java
+/Users/tangyao/Downloads/livegoods/livegoods_search/src/main/java/com/livegoods/search/controller/SearchController.java
+/Users/tangyao/Downloads/livegoods/livegoods_search/src/main/java/com/livegoods/search/dao/SearchDao.java
+/Users/tangyao/Downloads/livegoods/livegoods_search/src/main/java/com/livegoods/search/service/SearchService.java
+/Users/tangyao/Downloads/livegoods/livegoods_search/src/main/java/com/livegoods/search/pojo/House4ES.java
