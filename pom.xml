@@ -17,6 +17,10 @@
         <module>livegoods_recommendation</module>
         <module>livegoods_pojo_item</module>
         <module>livegoods_hot_product</module>
+        <module>livegoods_search</module>
+        <module>livegoods_data_elasticsearch</module>
+        <module>livegoods_pojo_houses</module>
+        <module>livegoods_details</module>
     </modules>
 
     <properties>
@@ -25,6 +29,7 @@
         <lcn-version>5.0.2.RELEASE</lcn-version>
         <fastdfs-version>1.27</fastdfs-version>
         <commons-lang-version>3.4</commons-lang-version>
+        <elasticsearch.version>6.8.4</elasticsearch.version>
     </properties>
 
     <dependencyManagement>
@@ -71,6 +76,50 @@
                 <artifactId>txlcn-txmsg-netty</artifactId>
                 <version>${lcn-version}</version>
             </dependency>
+
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
+                <version>2.2.9.RELEASE</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.data</groupId>
+                <artifactId>spring-data-elasticsearch</artifactId>
+                <version>3.2.10.RELEASE</version>
+            </dependency>
+            <dependency>
+                <groupId>org.elasticsearch</groupId>
+                <artifactId>elasticsearch</artifactId>
+                <version>${elasticsearch.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.elasticsearch.client</groupId>
+                <artifactId>elasticsearch-rest-high-level-client</artifactId>
+                <version>${elasticsearch.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.elasticsearch.plugin</groupId>
+                <artifactId>transport-netty4-client</artifactId>
+                <version>${elasticsearch.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.elasticsearch.client</groupId>
+                <artifactId>transport</artifactId>
+                <version>${elasticsearch.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.elasticsearch.client</groupId>
+                <artifactId>elasticsearch-rest-client</artifactId>
+                <version>${elasticsearch.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>commons-logging</groupId>
+                        <artifactId>commons-logging</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
