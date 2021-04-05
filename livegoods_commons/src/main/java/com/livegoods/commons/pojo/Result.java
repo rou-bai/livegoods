@@ -18,6 +18,7 @@ public class Result<T> implements Serializable {
     private List<T> results;
     private boolean hasMore;
     private long time;
+    private String msg;
 
     public Result(Integer status, List<T> results){
         this.status = status;

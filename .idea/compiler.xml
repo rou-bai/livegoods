@@ -8,9 +8,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="livegoods_search" />
+        <module name="livegoods_data_redis" />
         <module name="livegoods_getway" />
         <module name="livegoods_banner" />
         <module name="livegoods_pojo_houses" />
+        <module name="livegoods_pojo_passport" />
         <module name="livegoods_pojo_item" />
         <module name="livegoods_dao_mongodb" />
         <module name="livegoods_hot_product" />
@@ -18,6 +20,7 @@
         <module name="livegoods_comments" />
         <module name="livegoods_gateway" />
         <module name="livegoods_eureka" />
+        <module name="livegoods_passport" />
         <module name="livegoods_details" />
         <module name="livegoods_by_time" />
         <module name="livegoods_recommendation" />

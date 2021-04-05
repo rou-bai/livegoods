@@ -24,6 +24,9 @@
         <module>livegoods_comments</module>
         <module>livegoods_pojo_comment</module>
         <module>livegoods_by_time</module>
+        <module>livegoods_passport</module>
+        <module>livegoods_data_redis</module>
+        <module>livegoods_pojo_passport</module>
     </modules>
 
     <properties>
