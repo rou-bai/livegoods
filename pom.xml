@@ -21,6 +21,8 @@
         <module>livegoods_data_elasticsearch</module>
         <module>livegoods_pojo_houses</module>
         <module>livegoods_details</module>
+        <module>livegoods_comments</module>
+        <module>livegoods_pojo_comment</module>
     </modules>
 
     <properties>

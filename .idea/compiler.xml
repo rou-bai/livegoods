@@ -14,6 +14,8 @@
         <module name="livegoods_pojo_item" />
         <module name="livegoods_dao_mongodb" />
         <module name="livegoods_hot_product" />
+        <module name="livegoods_pojo_comment" />
+        <module name="livegoods_comments" />
         <module name="livegoods_gateway" />
         <module name="livegoods_eureka" />
         <module name="livegoods_details" />
