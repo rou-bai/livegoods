@@ -3,18 +3,20 @@ package com.livegoods.passport.dao.redis.impl;
 import com.livegoods.passport.dao.redis.PassportDao4Redis;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Repository;
 
+import javax.annotation.Resource;
 import java.util.concurrent.TimeUnit;
 
 @Repository
 public class PassportDao4RedisImpl implements PassportDao4Redis {
-    @Autowired
-    private RedisTemplate redisTemplate;
+    @Resource
+    private StringRedisTemplate stringRedisTemplate;
 
     @Override
     public String getValidateCode(String key) {
-        Object value = redisTemplate.opsForValue().get(key);
+        Object value = stringRedisTemplate.opsForValue().get(key);
         if(value == null){
             return null;
         }
@@ -23,11 +25,11 @@ public class PassportDao4RedisImpl implements PassportDao4Redis {
 
     @Override
     public void setValidateCode(String key, String validateCode, long times, TimeUnit unit) {
-        redisTemplate.opsForValue().set(key, validateCode, times, unit);
+        stringRedisTemplate.opsForValue().set(key, validateCode, times, unit);
     }
 
     @Override
     public void removeValidateCode(String key) {
-        redisTemplate.delete(key);
+        stringRedisTemplate.delete(key);
     }
 }

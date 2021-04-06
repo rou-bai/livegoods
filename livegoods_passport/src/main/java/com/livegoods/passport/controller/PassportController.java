@@ -14,6 +14,26 @@ public class PassportController {
     private PassportService passportService;
 
     /**
+     * 登录逻辑。
+     *  实现逻辑
+     *   1、 根据username，拼接redis的key，访问redis查询现有验证码
+     *   2、 校验验证码和客户端发送的password是否一致。
+     *   3、 如果不同，登录失败
+     *   4、 如果相同，登录成功
+     *   5、 登录成功后，记录登录日志，包括数据：
+     *       {"手机号","登录时间", "登录方式[手机号验证码|用户名密码]"}
+     *   6、 可选操作，如果用户是第一次登录，可以考虑新增一条用户注册数据。注意，不是登录日志。
+     *       数据包括： {"手机号", "注册时间", "最近登录时间，如果存在此数据，每次登录都要更新"}
+     * @param username
+     * @param password
+     * @return
+     */
+    @PostMapping("/login")
+    public Result<Object> login(String username, String password){
+        return null;
+    }
+
+    /**
      * 发送验证码。正规实现是使用SMS服务，发送短信。
      * 当前系统使用输出打印的方式实现。
      *

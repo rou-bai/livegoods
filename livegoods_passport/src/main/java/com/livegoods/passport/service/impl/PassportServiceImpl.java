@@ -18,9 +18,26 @@ public class PassportServiceImpl implements PassportService {
     private PassportDao4Redis passportDao4Redis;
     @Autowired
     private PassportDao4Mongo passportDao4Mongo;
-    @Value("${livegoods.passport.validateCode.prefix}")
-    private String validateCodeKeyPrefix;
+//    @Value("${livegoods.passport.validateCode.prefix}")
+    private String validateCodeKeyPrefix = "livegoods:validateCode::";
     private final Random r = new Random();
+
+    /**
+     * 登录
+     *  1、 拼接key
+     *  2、 从redis查询验证码
+     *  3、 比较redis中的验证码，和请求提供的password是否一致
+     *  4、 维护一个LoginLog日志对象
+     *  5、 保存日志数据
+     *  6、 返回处理结果
+     * @param username
+     * @param password
+     * @return
+     */
+    @Override
+    public Result<Object> login(String username, String password){
+        return null;
+    }
 
     /**
      * 生成验证码逻辑。
