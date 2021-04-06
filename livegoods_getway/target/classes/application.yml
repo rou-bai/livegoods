@@ -55,11 +55,11 @@ spring:
           predicates:
             - Path=/buytime
             - Query=id
-        # 定义details的路由
+        # 定义登陆的路由
         - id: passport
           uri: http://127.0.0.1:9007
           predicates:
-            - Path=/sendyzm
+            - Path=/sendyzm,/login
 eureka:
   instance:
     prefer-ip-address: true

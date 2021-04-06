@@ -30,7 +30,7 @@ public class PassportController {
      */
     @PostMapping("/login")
     public Result<Object> login(String username, String password){
-        return null;
+        return passportService.login(username, password);
     }
 
     /**

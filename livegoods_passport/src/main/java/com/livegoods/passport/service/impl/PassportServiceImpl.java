@@ -4,11 +4,14 @@ import com.livegoods.commons.pojo.Result;
 import com.livegoods.passport.dao.mongo.PassportDao4Mongo;
 import com.livegoods.passport.dao.redis.PassportDao4Redis;
 import com.livegoods.passport.service.PassportService;
+import com.livegoods.pojo.LoginLog;
+import com.livegoods.pojo.User;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
@@ -18,8 +21,8 @@ public class PassportServiceImpl implements PassportService {
     private PassportDao4Redis passportDao4Redis;
     @Autowired
     private PassportDao4Mongo passportDao4Mongo;
-//    @Value("${livegoods.passport.validateCode.prefix}")
-    private String validateCodeKeyPrefix = "livegoods:validateCode::";
+    @Value("${livegoods.passport.validateCode.prefix}")
+    private String validateCodeKeyPrefix;
     private final Random r = new Random();
 
     /**
@@ -35,8 +38,71 @@ public class PassportServiceImpl implements PassportService {
      * @return
      */
     @Override
-    public Result<Object> login(String username, String password){
-        return null;
+    public Result<Object> login(String username, String password) {
+        // 定义返回结果对象
+        Result<Object> result = new Result<>();
+        // 创建日志对象
+        LoginLog log = new LoginLog();
+        Date now = new Date();
+        // 拼接 key
+        String key = validateCodeKeyPrefix + username;
+        // 查询redis中的验证码
+        String validateCode = passportDao4Redis.getValidateCode(key);
+        if(StringUtils.isBlank(validateCode)){ // redis中没有验证码的情况。
+            result.setStatus(500);
+            result.setMsg("登录失败");
+
+            log.setUsername(username);
+            log.setCurrentTime(now);
+            log.setMessage("未获取验证码");
+            log.setStatus(LoginLog.ERROR);
+            log.setType(LoginLog.VALIDATE_CODE);
+        }else{ // redis中有验证码的情况
+            // 获取验证码
+            validateCode = validateCode.split(":")[1];
+            if(validateCode.equals(password)){
+                // 验证码正确
+                result.setStatus(200);
+                result.setMsg("登录成功");
+
+                log.setUsername(username);
+                log.setCurrentTime(now);
+                log.setMessage("登录成功");
+                log.setStatus(LoginLog.SUCCESS);
+                log.setType(LoginLog.VALIDATE_CODE);
+
+                // 可选操作，用户自动注册，及用户最近登录时间更新。
+                User user = passportDao4Mongo.findByPhone(username);
+                if(user == null){
+                    // 新用户，自动注册
+                    user = new User();
+                    user.setPhone(username);
+                    user.setRegisterTime(now);
+                    user.setLastLoginTime(now);
+                    passportDao4Mongo.insertUser(user);
+                }else{
+                    // 老用户，更新最近登录时间
+                    user.setLastLoginTime(now);
+                    passportDao4Mongo.updateUser(user);
+                }
+            }else{
+                // 验证码错误
+                result.setStatus(500);
+                result.setMsg("登录失败");
+
+                log.setUsername(username);
+                log.setCurrentTime(now);
+                log.setMessage("验证码错误，登录失败");
+                log.setStatus(LoginLog.ERROR);
+                log.setType(LoginLog.VALIDATE_CODE);
+            }
+            // 删除已使用的验证码
+            passportDao4Redis.removeValidateCode(key);
+        }
+        // 记录登录日志
+        passportDao4Mongo.insertPassportLog(log);
+
+        return result;
     }
 
     /**
