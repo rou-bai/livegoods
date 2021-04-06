@@ -1,5 +1,6 @@
 package com.livegoods.houses.controller;
 
+import com.livegoods.commons.pojo.Result;
 import com.livegoods.pojo.Houses;
 import com.livegoods.houses.service.HousesService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,4 +28,12 @@ public class HousesController {
     public Houses showHouseDetailsById(String id){
         return housesService.getHouseById(id);
     }
+
+    /*
+    修改商品库存
+     */
+    @PostMapping("/modifyHousesNum")
+    public Result<Houses> modifyHousesNum(@RequestBody Houses houses){
+        return housesService.modifyHousesNum(houses);
+    };
 }

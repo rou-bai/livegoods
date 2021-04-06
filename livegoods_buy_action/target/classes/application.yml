@@ -1,0 +1,19 @@
+server:
+  port: 9009
+spring:
+  application:
+    name: livegoods-buy-action
+  profiles:
+    active: commons
+  rabbitmq:
+    host: 192.168.1.4
+    port: 5672
+    virtual-host: /
+    username: smallming
+    password: smallming
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://192.168.1.4:8761/eureka/

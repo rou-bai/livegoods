@@ -42,14 +42,14 @@ spring:
           predicates:
             - Path=/details
             - Query=id
-        # 定义details的路由
+        # 定义comments的路由
         - id: comments
           uri: http://127.0.0.1:9005
           predicates:
             - Path=/comment
             - Query=id
             - Query=page
-        # 定义details的路由
+        # 定义buytime的路由
         - id: buytime
           uri: http://127.0.0.1:9006
           predicates:
@@ -60,6 +60,17 @@ spring:
           uri: http://127.0.0.1:9007
           predicates:
             - Path=/sendyzm,/login
+        - id: buyaction
+          uri: http://127.0.0.1:9009
+          predicates:
+            - Path=/buyaction
+            - Query=id
+            - Query=user
+        - id: order
+          uri: http://127.0.0.1:9008
+          predicates:
+            - Path=/order
+            - Query=user
 eureka:
   instance:
     prefer-ip-address: true

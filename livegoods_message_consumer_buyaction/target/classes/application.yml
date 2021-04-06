@@ -1,0 +1,16 @@
+livegoods:
+  lock:
+    buyAction: 'livegoods:buyaction:lock:key'  #分布式锁
+spring:
+  application:
+    name: livegoods-consumer-buyaction
+  profiles:
+    active: commons
+  redis:
+    host: 192.168.1.4
+  rabbitmq:
+    host: 192.168.1.4
+    port: 5672
+    username: smallming
+    password: smallming
+    virtual-host: /

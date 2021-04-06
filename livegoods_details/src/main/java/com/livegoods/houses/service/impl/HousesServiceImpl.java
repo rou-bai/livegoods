@@ -1,5 +1,7 @@
 package com.livegoods.houses.service.impl;
 
+import com.codingapi.txlcn.tc.annotation.TccTransaction;
+import com.livegoods.commons.pojo.Result;
 import com.livegoods.houses.dao.HousesDao;
 import com.livegoods.pojo.Houses;
 import com.livegoods.houses.service.HousesService;
@@ -8,6 +10,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
 import java.util.List;
 
 @Service
@@ -45,4 +48,29 @@ public class HousesServiceImpl implements HousesService {
         houses.setImgs(imgs);
         return houses;
     };
+
+
+    @Override
+    @TccTransaction
+    public Result<Houses> modifyHousesNum(Houses houses){
+        housesDao.updateHousesNum(houses);
+        Result<Houses> updateResult = new Result<>();
+        updateResult.setStatus(200);
+        updateResult.setResults(Arrays.asList(houses));
+        return updateResult;
+    }
+
+    public Result<Houses> confirmModifyHousesNum(Houses houses){
+        Result<Houses> updateResult = new Result<>();
+        updateResult.setStatus(200);
+        return updateResult;
+    }
+    // 取消，恢复原数据，库存+1。
+    public Result<Houses> cancelModifyHousesNum(Houses houses){
+        houses.setNums(houses.getNums() + 1);
+        housesDao.updateHousesNum(houses);
+        Result<Houses> updateResult = new Result<>();
+        updateResult.setStatus(500);
+        return updateResult;
+    }
 }

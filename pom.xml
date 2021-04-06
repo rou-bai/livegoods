@@ -32,6 +32,8 @@
         <module>livegoods_message_consumer_buyaction</module>
         <module>livegoods_message_consumer_order</module>
         <module>livegoods_pojo_order</module>
+        <module>livegoods_lcn_tm</module>
+        <module>livegoods_order</module>
     </modules>
 
     <properties>

@@ -7,10 +7,10 @@ livegoods:
       routingKey: buyaction
       queueName: livegoods-buyaction-queue
       exchangeType: topic
-  order:
-    exchange: livegoods-order
-    routingKey: order
-    queueName: livegoods-order-queue
-    exchangeType: topic
+    order:
+      exchange: livegoods-order
+      routingKey: order
+      queueName: livegoods-order-queue
+      exchangeType: topic
   house:
     redisPrefix: 'livegoods:details::getHouseById'

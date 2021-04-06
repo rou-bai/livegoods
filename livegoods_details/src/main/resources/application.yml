@@ -5,6 +5,11 @@ spring:
     active: mongo,commons
   application:
     name: livegoods-details
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/lcn?serverTimezone=Asia/Shanghai
+    username: root
+    password: ty123456
   redis: # 提供Redis配置
     host: 192.168.1.4
     port: 6379
@@ -15,8 +20,12 @@ eureka:
     instance-id: ${spring.cloud.client.ip-address}:${server.port}
   client:
     service-url:
-      defaultZone: http://172.17.0.8:8761/eureka/  # 注册中心
+      defaultZone: http://192.168.1.4:8761/eureka/
+#      defaultZone: http://172.17.0.8:8761/eureka/  # 注册中心
       register-with-eureka: true
 livegoods:
   details:
     imgMiddle: 'group1/M00/00/00/'
+tx-lcn:
+  client:
+    manager-address: 192.168.1.4:8070
