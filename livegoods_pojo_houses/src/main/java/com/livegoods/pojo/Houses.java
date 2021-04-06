@@ -28,5 +28,6 @@ public class Houses implements Serializable {
      */
     private Map<String, String> info;
     private Date buytime;
+    private int nums;
 
 }

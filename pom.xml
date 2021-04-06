@@ -27,6 +27,11 @@
         <module>livegoods_passport</module>
         <module>livegoods_data_redis</module>
         <module>livegoods_pojo_passport</module>
+        <module>livegoods_message_publisher</module>
+        <module>livegoods_buy_action</module>
+        <module>livegoods_message_consumer_buyaction</module>
+        <module>livegoods_message_consumer_order</module>
+        <module>livegoods_pojo_order</module>
     </modules>
 
     <properties>
