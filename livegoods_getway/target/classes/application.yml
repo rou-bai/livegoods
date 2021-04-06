@@ -71,6 +71,10 @@ spring:
           predicates:
             - Path=/order
             - Query=user
+        - id: feedback
+          uri: http://127.0.0.1:9010
+          predicates:
+            - Path=/feelback
 eureka:
   instance:
     prefer-ip-address: true

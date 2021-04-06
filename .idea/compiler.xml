@@ -15,6 +15,7 @@
         <module name="livegoods_recommendation" />
         <module name="livegoods_message_consumer_order" />
         <module name="livegoods_data_elasticsearch" />
+        <module name="livegoods_feedback" />
         <module name="livegoods_search" />
         <module name="livegoods_lcn_tm" />
         <module name="livegoods_order" />
